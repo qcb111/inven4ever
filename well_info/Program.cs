@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace well_info {
     class Program {
-        static void Main(string[] args) {
+        static void Main()
+        {
         }
     }
 }
