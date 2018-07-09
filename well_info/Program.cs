@@ -9,6 +9,7 @@ namespace well_info {
         static void Main()
         {
             Console.WriteLine("hello world!");
+            Console.WriteLine(123);
         }
     }
 }

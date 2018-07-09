@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "well_info", "well_info\well_info.csproj", "{FA3AB664-D8EC-4BEE-8CE5-0941116421FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinForm_WellInfo", "WindowsFormsApp1\WinForm_WellInfo.csproj", "{D29C8856-20C5-4F89-85A7-69FFDEFBDF52}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{FA3AB664-D8EC-4BEE-8CE5-0941116421FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA3AB664-D8EC-4BEE-8CE5-0941116421FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA3AB664-D8EC-4BEE-8CE5-0941116421FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D29C8856-20C5-4F89-85A7-69FFDEFBDF52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D29C8856-20C5-4F89-85A7-69FFDEFBDF52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D29C8856-20C5-4F89-85A7-69FFDEFBDF52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D29C8856-20C5-4F89-85A7-69FFDEFBDF52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
