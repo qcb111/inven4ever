@@ -15,6 +15,8 @@ namespace well_info {
             DataSet set = new DataSet();
             mysql.Query("select * from wellInfo", ref set);
             #endregion
+			
+			
         }
     }
 }
