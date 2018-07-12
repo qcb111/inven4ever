@@ -9,6 +9,7 @@ namespace well_info {
     class Program {
         static void Main()
         {
+			
             //test MysqlX
             #region  
             MysqlX mysql = new MysqlX();
