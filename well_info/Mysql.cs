@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+//using MySql.Data.MySqlClient;
 using System.Data;
-
+/*
 namespace Sql {
     class MysqlX : ISql {
         private string strCmd;
@@ -111,3 +111,4 @@ namespace Sql {
         }
     }
 }
+*/

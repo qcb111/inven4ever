@@ -14,12 +14,12 @@ namespace Sql {
         private SqlDataAdapter dataAdaptor;
         private SqlCommand sqlCmd = new SqlCommand();
 
-        private const string server = "192.168.0.2";
-        private const int port = 3306;
-        private const string user = "root";
-        private const string host = "192.168.0.2";
-        private const string password = "123";
-        private const string database = "well";
+        private const string server = "127.0.0.1";
+        //private const int port = 3306;
+        private const string user = "sa";
+        private const string host = "";
+        private const string password = "123456";
+        private const string database = "Well_Info";
         private static string source;
 
         static SqlServer() {
