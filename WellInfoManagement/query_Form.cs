@@ -25,8 +25,8 @@ namespace WellInfoManagement
         public Query_Form(connectServer_Form _mainForm) : this()
         {
             mainForm = _mainForm;
-            WellData data = new WellData("n-1", 123, 456, "abc", 123, 456);
-            mainForm.sqlServer.Insert(data);
+            //WellData data = new WellData("n-1", 123, 456, "abc", 123, 456);
+            //mainForm.sqlServer.Insert(data);
         }
 
         private void deleteResults_btn_Click(object sender, EventArgs e)

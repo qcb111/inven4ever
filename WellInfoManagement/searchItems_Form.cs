@@ -20,12 +20,12 @@ namespace WellInfoManagement
         public searchItems_Form()
         {
             InitializeComponent();
-            AddOneLine();
         }
         public searchItems_Form(connectServer_Form _mainForm, Query_Form _queryForm):this()
         {
             mainForm = _mainForm;
             queryForm = _queryForm;
+            AddOneLine();
         }
 
         //2 group of + and - button;
@@ -151,9 +151,9 @@ namespace WellInfoManagement
 
         private void AddComboboxItemsTableItems(int i, int j)
         {
-            for (int k = 0; k < mainForm.sqlServer.TableName.Length; k++)
+            for (int k = 0; k < mainForm.sqlServer.TitleNames.Length; k++)
             {
-                comboBoxesInLines[i, j].Items.Add(mainForm.sqlServer.TableName[k]);
+                comboBoxesInLines[i, j].Items.Add(mainForm.sqlServer.TitleNames[k]);
             }
         }
 
