@@ -104,7 +104,7 @@
             this.generateReportToolStripMenuItem.Name = "generateReportToolStripMenuItem";
             this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(147, 29);
             this.generateReportToolStripMenuItem.Text = "GenerateReport";
-            this.generateReportToolStripMenuItem.Click += new System.EventHandler(this.generateReportToolStripMenuItem_Click);
+            //this.generateReportToolStripMenuItem.Click += new System.EventHandler(this.generateReportToolStripMenuItem_Click);
             // 
             // Query_Form
             // 
@@ -118,7 +118,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Query_Form";
             this.Text = "Well Info Management System";
-            this.Load += new System.EventHandler(this.Query_Form_Load);
+            //this.Load += new System.EventHandler(this.Query_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.queryResult_dgv)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

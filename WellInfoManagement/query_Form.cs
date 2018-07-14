@@ -58,7 +58,8 @@ namespace WellInfoManagement
         {
             for (int i = 0; i < this.queryResult_dgv.Rows.Count; i++)
             {
-                if (int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out int id))
+                int id;
+                if (int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out id))
                 {
                     WellData wellData = new WellData(
                         queryResult_dgv.Rows[i].Cells[1].Value.ToString(),
