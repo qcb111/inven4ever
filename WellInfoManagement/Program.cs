@@ -1,22 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace WellInfoManagement
-{
-    static class Program
-    {
-        /// <summary>
-        /// 应用程序的主入口点。
-        /// </summary>
-        [STAThread]
+using Sql;
+using System.Data.SqlClient;
+namespace well_info {
+    class Program {
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            SqlServer sql = new SqlServer();
+            DataSet set = new DataSet();
+            sql.Query("select * from well_info", ref set);
+            //test MysqlX
+            #region  
+            //MysqlX mysql = new MysqlX();
+            //DataSet set = new DataSet();
+            //mysql.Query("select * from wellInfo", ref set);
+            #endregion
+			
+			
         }
     }
 }

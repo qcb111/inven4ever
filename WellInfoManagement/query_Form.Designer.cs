@@ -1,6 +1,6 @@
 ﻿namespace WellInfoManagement
 {
-    partial class Form1
+    partial class Query_Form
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -64,6 +64,7 @@
             this.updateModifiedData_btn.TabIndex = 2;
             this.updateModifiedData_btn.Text = "Update Modified Data";
             this.updateModifiedData_btn.UseVisualStyleBackColor = true;
+            this.updateModifiedData_btn.Click += new System.EventHandler(this.updateModifiedData_btn_Click);
             // 
             // deleteResults_btn
             // 
@@ -83,6 +84,7 @@
             this.sendSearchRequest_btn.TabIndex = 3;
             this.sendSearchRequest_btn.Text = "Send Search Request";
             this.sendSearchRequest_btn.UseVisualStyleBackColor = true;
+            this.sendSearchRequest_btn.Click += new System.EventHandler(this.sendSearchRequest_btn_Click);
             // 
             // generateReport_btn
             // 
@@ -93,7 +95,7 @@
             this.generateReport_btn.Text = "Generate Report Upon Query Results";
             this.generateReport_btn.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // Query_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -104,7 +106,7 @@
             this.Controls.Add(this.updateModifiedData_btn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.queryResult_dgv);
-            this.Name = "Form1";
+            this.Name = "Query_Form";
             this.Text = "Well Info Management System";
             ((System.ComponentModel.ISupportInitialize)(this.queryResult_dgv)).EndInit();
             this.ResumeLayout(false);
@@ -114,7 +116,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView queryResult_dgv;
+        public System.Windows.Forms.DataGridView queryResult_dgv;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button updateModifiedData_btn;
         private System.Windows.Forms.Button deleteResults_btn;
