@@ -117,13 +117,12 @@ namespace Sql {
 
             string strCmd = "update Well_Info set "
                 + " WellName = '" + wellData.WellName.ToString() +"'"
-                + " xCoord = " + wellData.XCoord.ToString()
-                + " yCoord = " + wellData.YCoord.ToString()
-                + " wellType = '" + wellData.WellType.ToString() + "'"
-                + "KellyBushing = " + wellData.KellyBushing.ToString()
-                + "totalDepth = " + wellData.TotalDepth.ToString()
-                + " where id="
-                + wellData.Id.ToString();
+                + " ,xCoord = " + wellData.XCoord.ToString()
+                + " ,yCoord = " + wellData.YCoord.ToString()
+                + " ,wellType = '" + wellData.WellType.ToString() + "'"
+                + " ,KellyBushing = " + wellData.KellyBushing.ToString()
+                + " ,totalDepth = " + wellData.TotalDepth.ToString()
+                + " where id=" + wellData.Id.ToString();
 
             sqlCmd.CommandText = strCmd;
             return sqlCmd.ExecuteNonQuery();

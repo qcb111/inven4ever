@@ -41,7 +41,20 @@ namespace WellInfoManagement
         public ComboBox[,] comboBoxesInLines = new ComboBox[maxLineCount, 3];
         public TextBox[] valueOfSearch = new TextBox[maxLineCount];
 
-        public int EffectiveLineCount { get => effectiveLineCount; set => effectiveLineCount = value; }
+        public int EffectiveLineCount
+        {
+            get
+            {
+                return effectiveLineCount;
+            }
+
+            set
+            {
+                effectiveLineCount = value;
+            }
+        }
+
+        //public int EffectiveLineCount { get => effectiveLineCount; set => effectiveLineCount = value; }
 
         private void AddOneLine()
         {
@@ -156,7 +169,7 @@ namespace WellInfoManagement
             this.mainForm.sqlServer.Query(sqlCmd, ref set);
             //((connectServer_Form)Parent).sqlServer.Query(sqlCmd, ref set);
             queryForm.queryResult_dgv.DataSource = set.Tables[0];
-            set.Clear();
+            this.Close();
         }
 
 
