@@ -82,6 +82,36 @@ namespace WellInfoManagement
                     ));
             }
         }
+
+        private void generateReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           // System.Windows.Forms.DataGridView dgv_Info = new System.Windows.Forms.DataGridView();
+            //if (dgv_Info.Rows.Count == 0)//判断是否有数据
+            //    return;//返回
+            Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();//实例化Excel对象
+            excel.Application.Workbooks.Add(true);//在Excel中添加一个工作簿
+            excel.Visible = true;//设置Excel显示
+            //生成字段名称
+            for (int i = 0; i < queryResult_dgv.ColumnCount; i++)
+            {
+                excel.Cells[1, i + 1] = queryResult_dgv.Columns[i].HeaderText;//将数据表格控件中的列表头填充到Excel中
+            }
+            //填充数据
+            for (int i = 0; i < queryResult_dgv.RowCount - 1; i++)//遍历数据表格控件的所有行
+            {
+                for (int j = 0; j < queryResult_dgv.ColumnCount; j++)//遍历数据表格控件的所有列
+                {
+                    if (queryResult_dgv[j, i].ValueType == typeof(string))//判断遍历到的数据是否是字符串类型
+                    {
+                        excel.Cells[i + 2, j + 1] = "'" + queryResult_dgv[j, i].Value.ToString();//填充Excel表格
+                    }
+                    else
+                    {
+                        excel.Cells[i + 2, j + 1] = queryResult_dgv[j, i].Value.ToString();//填充Excel表格
+                    }
+                }
+            }
+        }
     }
 
 
