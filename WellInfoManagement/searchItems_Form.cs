@@ -169,6 +169,10 @@ namespace WellInfoManagement
             this.mainForm.sqlServer.Query(sqlCmd, ref set);
             //((connectServer_Form)Parent).sqlServer.Query(sqlCmd, ref set);
             queryForm.queryResult_dgv.DataSource = set.Tables[0];
+            if(set.Tables[0].Rows.Count>0)
+            {
+                queryForm.queryResult_dgv.Columns[0].ReadOnly = true;
+            }
             this.Close();
         }
 

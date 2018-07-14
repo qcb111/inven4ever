@@ -72,8 +72,16 @@ namespace Sql {
         /// <param name="wellData"></param>
         /// <returns>rows affected</returns>
         public int DeleteOne(WellData wellData) {
-            strCmd = "delete from wellInfo where  id = "
+            strCmd = "delete from wellInfo where id = "
                 + wellData.Id;
+            sqlCmd.CommandText = strCmd;
+            return sqlCmd.ExecuteNonQuery();
+        }
+
+        public int DeleteOne(int id)
+        {
+            strCmd = "delete from wellInfo where id = "
+                + id;
             sqlCmd.CommandText = strCmd;
             return sqlCmd.ExecuteNonQuery();
         }
