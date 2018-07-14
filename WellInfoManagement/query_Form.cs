@@ -63,7 +63,7 @@ namespace WellInfoManagement
                 {
                     mainForm.sqlServer.Update(wellData, id);
                 }
-                else if(queryResult_dgv.Rows[i].Cells[0].Value == null)
+                else if(queryResult_dgv.Rows[i].Cells[0].Value.ToString() == "")
                 {
                     mainForm.sqlServer.Insert(wellData);
                 }
