@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImportDB.cs" />
     <Compile Include="searchItems_Form.cs">
       <SubType>Form</SubType>
     </Compile>
