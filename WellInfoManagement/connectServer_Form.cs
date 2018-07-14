@@ -58,6 +58,9 @@ namespace WellInfoManagement
             return true;
         }
 
+        private void serverIP_tb_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }
