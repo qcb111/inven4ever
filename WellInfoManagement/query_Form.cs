@@ -61,16 +61,18 @@ namespace WellInfoManagement
                           double.Parse(queryResult_dgv.Rows[i].Cells[6].Value.ToString())
                           );
                     int id;
+                    int count = 0;
                     if (int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out id))
                     {
-                        mainForm.sqlServer.Update(wellData, id);
+                        count = mainForm.sqlServer.Update(wellData, id);
                     }
                     else if (queryResult_dgv.Rows[i].Cells[0].Value.ToString() == "")
                     {
-                        mainForm.sqlServer.Insert(wellData);
+                        count = mainForm.sqlServer.Insert(wellData);
                     }
+                    this.NumberOfLinesAffected_toolStripStatusLabel.Text = count.ToString() + " lines affected.";
                 }
-                catch(Exception)
+                catch (Exception)
                 {
                     MessageBox.Show("Invalid Input Data Existed.");
                 }

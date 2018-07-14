@@ -166,7 +166,8 @@ namespace WellInfoManagement
         private void sendRequest_btn_Click(object sender, EventArgs e)
         {
             string sqlCmd = GenerateSqlSearchCommand();
-            MessageBox.Show(sqlCmd);
+            //MessageBox.Show(sqlCmd);
+            queryForm.LastCommand_toolStripStatusLabel.Text = "Last excuted command: " + sqlCmd;
             queryForm.Show();
             DataSet set = new DataSet();
             this.mainForm.sqlServer.Query(sqlCmd, ref set);
@@ -195,7 +196,16 @@ namespace WellInfoManagement
                 sqlCmd += " ";
                 sqlCmd += comboBoxesInLines[i, 2].Text;
                 sqlCmd += " ";
-                sqlCmd += valueOfSearch[i].Text;
+                if(double.TryParse(valueOfSearch[i].Text,out double buffer))
+                {
+                    sqlCmd += valueOfSearch[i].Text;
+                }
+                else
+                {
+                    sqlCmd += "'";
+                    sqlCmd += valueOfSearch[i].Text;
+                    sqlCmd += "'";
+                }
                 sqlCmd += " ";
             }
             return sqlCmd;
