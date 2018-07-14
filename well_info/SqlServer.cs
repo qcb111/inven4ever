@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sql {
-    class SqlServer : ISql {
+    public class SqlServer : ISql {
         private string strCmd;
         /// <summary>
         /// choose one connection type

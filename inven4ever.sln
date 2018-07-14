@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "well_info", "well_info\well_info.csproj", "{FA3AB664-D8EC-4BEE-8CE5-0941116421FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WellInfoManagement", "WellInfoManagement\WellInfoManagement.csproj", "{41567206-51CF-4FF3-B287-52D4964E56BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlToExcel", "G:\【3】职前自学\c#1200例\#开发实战1200例(第1卷).光盘\C#开发实战1200例(1)\MR\20\460\SqlToExcel\SqlToExcel\SqlToExcel.csproj", "{98DE6257-36ED-4747-84DB-8E82878A1587}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlToExcel", "SqlToExcel\SqlToExcel\SqlToExcel.csproj", "{98DE6257-36ED-4747-84DB-8E82878A1587}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

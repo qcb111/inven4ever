@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sql {
-    class WellData {
+    public class WellData {
         public WellData(string wellName, int xCoord, int yCoord, string wellType, double kellyBushing, double totalDepth) {
             WellName = wellName;
             XCoord = xCoord;

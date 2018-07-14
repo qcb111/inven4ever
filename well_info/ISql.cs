@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Sql {
-    interface ISql {
+    public interface ISql {
         int Insert(WellData wellData);
         int DeleteOne(WellData wellData);
         int DeleteSome(List<WellData> listWellData);
