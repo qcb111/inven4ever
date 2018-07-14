@@ -77,7 +77,6 @@
             this.serverIP_tb.Size = new System.Drawing.Size(148, 28);
             this.serverIP_tb.TabIndex = 1;
             this.serverIP_tb.Text = "100.96.140.17";
-            this.serverIP_tb.TextChanged += new System.EventHandler(this.serverIP_tb_TextChanged);
             // 
             // user_tb
             // 

@@ -152,9 +152,10 @@ namespace WellInfoManagement
             string sqlCmd = GenerateSqlSearchCommand();
             MessageBox.Show(sqlCmd);
             queryForm.Show();
-            mainForm.sqlServer.Query(sqlCmd, ref queryForm.queryResult);
-            queryForm.queryResult_dgv.DataSource = queryForm.queryResult.Tables[0];
-            queryForm.queryResult.Clear();
+            DataSet set = new DataSet();
+            mainForm.sqlServer.Query(sqlCmd, ref set);
+            queryForm.queryResult_dgv.DataSource = set.Tables[0];
+            set.Clear();
         }
 
 

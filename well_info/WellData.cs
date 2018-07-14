@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sql {
     public class WellData {
-        public WellData(string wellName, int xCoord, int yCoord, string wellType, double kellyBushing, double totalDepth) {
+        public WellData(string wellName, double xCoord, double yCoord, string wellType, double kellyBushing, double totalDepth) {
             WellName = wellName;
             XCoord = xCoord;
             YCoord = yCoord;
@@ -18,8 +18,8 @@ namespace Sql {
 
         public int Id { get; }
         public string WellName { get; set; }
-        public int XCoord { get; set; }
-        public int YCoord { get; set; }
+        public double XCoord { get; set; }
+        public double YCoord { get; set; }
         public string WellType { get; set; }
         public double KellyBushing { get; set; }
         public double TotalDepth { get; set; }

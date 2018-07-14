@@ -86,6 +86,7 @@
             this.UpdateToolStripMenuItem.Name = "UpdateToolStripMenuItem";
             this.UpdateToolStripMenuItem.Size = new System.Drawing.Size(82, 29);
             this.UpdateToolStripMenuItem.Text = "Update";
+            this.UpdateToolStripMenuItem.Click += new System.EventHandler(this.UpdateToolStripMenuItem_Click);
             // 
             // DeleteToolStripMenuItem
             // 

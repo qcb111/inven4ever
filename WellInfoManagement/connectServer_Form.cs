@@ -36,10 +36,10 @@ namespace WellInfoManagement
             else
             {
                 MessageBox.Show("Connection Failed.","Error");
-                this.serverIP_tb.Text = "";
-                this.user_tb.Text = "";
-                this.password_tb.Text = "";
-                this.databaseName_tb.Text = "";
+                //this.serverIP_tb.Text = "";
+                //this.user_tb.Text = "";
+                //this.password_tb.Text = "";
+                //this.databaseName_tb.Text = "";
                 this.serverIP_tb.Focus();
             }
 
@@ -56,11 +56,6 @@ namespace WellInfoManagement
             if (sqlServer == null)
                 return false;
             return true;
-        }
-
-        private void serverIP_tb_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
