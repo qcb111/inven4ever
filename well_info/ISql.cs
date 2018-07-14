@@ -11,7 +11,7 @@ namespace Sql {
         int DeleteOne(WellData wellData);
         int DeleteSome(List<WellData> listWellData);
         int Query(string sqlcmd, ref DataSet set);
-        int Update(string sqlcmd, WellData wellData);
+        int Update(WellData wellData);
     }
 
 

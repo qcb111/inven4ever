@@ -64,15 +64,11 @@ namespace WellInfoManagement
                     double.Parse(queryResult_dgv.Rows[i].Cells[5].Value.ToString()),
                     double.Parse(queryResult_dgv.Rows[i].Cells[6].Value.ToString())
                     );
-                string sqlCmd = sqlCmdUpdate(int.Parse(queryResult_dgv.Rows[i].Cells[2].Value.ToString()));
                 mainForm.sqlServer.Update(wellData);
             }
         }
 
-        private string sqlCmdUpdate(int id)
-        {
 
-        }
     }
 
 
