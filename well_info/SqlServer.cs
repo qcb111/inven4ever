@@ -28,8 +28,8 @@ namespace Sql {
         private string[] titleNames;
         private string tableName;
 
-        public string[] TitleNames { get => titleNames; set => titleNames = value; }
-        public string TableName { get => tableName; set => tableName = value; }
+        public string[] TitleNames { get => titleNames;  }
+        public string TableName { get => tableName; }
 
         private static void constructSource_sql_auth() {
             source = "server=" + server
@@ -41,6 +41,11 @@ namespace Sql {
             source = "server=" + server
                 + ";database=" + database
                 + "integrated security=SSPI";
+        }
+
+        private int TrySelect(ref DataSet set) {
+            strCmd = "select * from " + tableName;
+            return Query(strCmd, ref set);
         }
 
         public SqlServer(string server_p,
@@ -62,9 +67,19 @@ namespace Sql {
             try {
                 con.Open();
                 sqlCmd.Connection = con;
+                DataSet set = new DataSet();
+                TrySelect(ref set);
                 Console.WriteLine("open success");
             }catch(SqlException ex) {
                 Console.WriteLine("open error" + ex.ToString());
+            }
+        }
+
+        private void setTitleNames(ref DataSet set) {
+            int count = set.Tables[0].Columns.Count;
+            titleNames = new string[count];
+            for(int i = 0; i < count; i++) {
+                titleNames[i] = set.Tables[0].Columns[i].ToString();
             }
         }
 
