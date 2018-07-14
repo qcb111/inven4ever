@@ -58,15 +58,18 @@ namespace WellInfoManagement
         {
             for (int i = 0; i < this.queryResult_dgv.Rows.Count; i++)
             {
-                WellData wellData = new WellData(
-                    queryResult_dgv.Rows[i].Cells[1].Value.ToString(),
-                    double.Parse(queryResult_dgv.Rows[i].Cells[2].Value.ToString()),
-                    double.Parse(queryResult_dgv.Rows[i].Cells[3].Value.ToString()),
-                    queryResult_dgv.Rows[i].Cells[4].Value.ToString(),
-                    double.Parse(queryResult_dgv.Rows[i].Cells[5].Value.ToString()),
-                    double.Parse(queryResult_dgv.Rows[i].Cells[6].Value.ToString())
-                    );
-                mainForm.sqlServer.Update(wellData, int.Parse(queryResult_dgv.Rows[i].Cells[0].Value.ToString()));
+                if (int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out int id))
+                {
+                    WellData wellData = new WellData(
+                        queryResult_dgv.Rows[i].Cells[1].Value.ToString(),
+                        double.Parse(queryResult_dgv.Rows[i].Cells[2].Value.ToString()),
+                        double.Parse(queryResult_dgv.Rows[i].Cells[3].Value.ToString()),
+                        queryResult_dgv.Rows[i].Cells[4].Value.ToString(),
+                        double.Parse(queryResult_dgv.Rows[i].Cells[5].Value.ToString()),
+                        double.Parse(queryResult_dgv.Rows[i].Cells[6].Value.ToString())
+                        );
+                    mainForm.sqlServer.Update(wellData, id);
+                }
             }
         }
 
@@ -76,10 +79,6 @@ namespace WellInfoManagement
             {                
                 mainForm.sqlServer.DeleteOne(int.Parse(this.queryResult_dgv.Rows[i].Cells[0].Value.ToString()));
             }
-        }
-
-        private void Query_Form_Load(object sender, EventArgs e) {
-
         }
     }
 
