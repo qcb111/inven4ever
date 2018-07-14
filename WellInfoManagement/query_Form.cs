@@ -77,6 +77,10 @@ namespace WellInfoManagement
                 mainForm.sqlServer.DeleteOne(int.Parse(this.queryResult_dgv.Rows[i].Cells[0].Value.ToString()));
             }
         }
+
+        private void Query_Form_Load(object sender, EventArgs e) {
+
+        }
     }
 
 

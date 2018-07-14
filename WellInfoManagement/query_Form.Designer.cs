@@ -41,22 +41,26 @@
             // 
             // queryResult_dgv
             // 
+            this.queryResult_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.queryResult_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.queryResult_dgv.Location = new System.Drawing.Point(28, 80);
-            this.queryResult_dgv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.queryResult_dgv.Location = new System.Drawing.Point(25, 64);
+            this.queryResult_dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.queryResult_dgv.Name = "queryResult_dgv";
             this.queryResult_dgv.RowTemplate.Height = 23;
-            this.queryResult_dgv.Size = new System.Drawing.Size(500, 323);
+            this.queryResult_dgv.Size = new System.Drawing.Size(444, 258);
             this.queryResult_dgv.TabIndex = 0;
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(199, 42);
+            this.label1.Location = new System.Drawing.Point(177, 34);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 33);
+            this.label1.Size = new System.Drawing.Size(180, 27);
             this.label1.TabIndex = 1;
             this.label1.Text = "Query Result";
             // 
@@ -70,49 +74,51 @@
             this.generateReportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(556, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(494, 28);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // QueryToolStripMenuItem
             // 
             this.QueryToolStripMenuItem.Name = "QueryToolStripMenuItem";
-            this.QueryToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
+            this.QueryToolStripMenuItem.Size = new System.Drawing.Size(60, 24);
             this.QueryToolStripMenuItem.Text = "Query";
             this.QueryToolStripMenuItem.Click += new System.EventHandler(this.QueryToolStripMenuItem_Click);
             // 
             // UpdateToolStripMenuItem
             // 
             this.UpdateToolStripMenuItem.Name = "UpdateToolStripMenuItem";
-            this.UpdateToolStripMenuItem.Size = new System.Drawing.Size(82, 29);
+            this.UpdateToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.UpdateToolStripMenuItem.Text = "Update";
             this.UpdateToolStripMenuItem.Click += new System.EventHandler(this.UpdateToolStripMenuItem_Click);
             // 
             // DeleteToolStripMenuItem
             // 
             this.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem";
-            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
+            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.DeleteToolStripMenuItem.Text = "Delete";
             this.DeleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click);
             // 
             // generateReportToolStripMenuItem
             // 
             this.generateReportToolStripMenuItem.Name = "generateReportToolStripMenuItem";
-            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(147, 29);
+            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(126, 24);
             this.generateReportToolStripMenuItem.Text = "GenerateReport";
             // 
             // Query_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 419);
+            this.ClientSize = new System.Drawing.Size(494, 335);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.queryResult_dgv);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Query_Form";
             this.Text = "Well Info Management System";
+            this.Load += new System.EventHandler(this.Query_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.queryResult_dgv)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
