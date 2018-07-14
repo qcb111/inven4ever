@@ -9,27 +9,50 @@ using System.Threading.Tasks;
 namespace Sql {
     class SqlServer : ISql {
         private string strCmd;
+        /// <summary>
+        /// choose one connection type
+        /// </summary>
+        public enum connectionType {
+            windowsAuthentication,
+            sqlServerAuthentication
+        }
 
         private SqlConnection con;
         private SqlDataAdapter dataAdaptor;
         private SqlCommand sqlCmd = new SqlCommand();
 
-        private const string server = "127.0.0.1";
-        //private const int port = 3306;
-        private const string user = "sa";
-        private const string host = "";
-        private const string password = "123456";
-        private const string database = "Well_Info";
+        private static string server;
+        private static string user;
+        //private static string host;
+        private static string password;
+        private static string database;
         private static string source;
 
-        static SqlServer() {
+        private static void constructSource_sql_auth() {
             source = "server=" + server
                 + ";database=" + database
                 + ";uid=" + user
                 + ";pwd=" + password;
         }
+        private static void constructSource_win_auth() {
+            source = "server=" + server
+                + ";database=" + database
+                + "integrated security=SSPI";
+        }
 
-        public SqlServer() {
+        public SqlServer(string server_p,
+            string user_p, string passwd_p,
+            string dataBase_p, connectionType conType) {
+            server = server_p;
+            user = user_p;
+            password = passwd_p;
+            database = dataBase_p;
+
+            if (conType == connectionType.sqlServerAuthentication)
+                constructSource_sql_auth();
+            else
+                constructSource_win_auth();
+
             con = new SqlConnection();
             con.ConnectionString = source;
             try {
