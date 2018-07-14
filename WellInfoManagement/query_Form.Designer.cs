@@ -119,6 +119,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Query_Form";
             this.Text = "Well Info Management System";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Query_Form_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.queryResult_dgv)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

@@ -120,7 +120,11 @@ namespace WellInfoManagement
             }
         }
 
-
+        private void Query_Form_FormClosed(object sender, FormClosedEventArgs e) {
+            //Application.Exit();
+            //mainForm.Close();
+            Environment.Exit(0);
+        }
     }
 
 
