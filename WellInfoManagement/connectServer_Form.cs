@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Sql;
 
 namespace WellInfoManagement
 {
@@ -14,6 +15,7 @@ namespace WellInfoManagement
     {
         public Query_Form queryForm;
         public searchItems_Form searchItemsForm;
+        public SqlServer sqlServer;
         public connectServer_Form()
         {
             InitializeComponent();
@@ -46,6 +48,13 @@ namespace WellInfoManagement
         private bool ConnectToSqlServerSuccessful()
         {
             // to be completed
+            sqlServer = new SqlServer(this.serverIP_tb.Text,
+                this.user_tb.Text, 
+                this.password_tb.Text, 
+                this.databaseName_tb.Text,
+                ConnectionType.sqlServerAuthentication);
+            if (sqlServer == null)
+                return false;
             return true;
         }
 

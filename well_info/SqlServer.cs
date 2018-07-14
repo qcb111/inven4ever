@@ -12,10 +12,7 @@ namespace Sql {
         /// <summary>
         /// choose one connection type
         /// </summary>
-        public enum connectionType {
-            windowsAuthentication,
-            sqlServerAuthentication
-        }
+
 
         private SqlConnection con;
         private SqlDataAdapter dataAdaptor;
@@ -42,13 +39,13 @@ namespace Sql {
 
         public SqlServer(string server_p,
             string user_p, string passwd_p,
-            string dataBase_p, connectionType conType) {
+            string dataBase_p, ConnectionType conType) {
             server = server_p;
             user = user_p;
             password = passwd_p;
             database = dataBase_p;
 
-            if (conType == connectionType.sqlServerAuthentication)
+            if (conType == ConnectionType.sqlServerAuthentication)
                 constructSource_sql_auth();
             else
                 constructSource_win_auth();
