@@ -24,7 +24,7 @@ namespace WellInfoManagement
 
         public Query_Form(connectServer_Form _mainForm):this()
         {
-            _mainForm = mainForm;
+            mainForm = _mainForm;
         }
 
         private void deleteResults_btn_Click(object sender, EventArgs e)

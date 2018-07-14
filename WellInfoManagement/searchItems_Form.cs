@@ -153,7 +153,8 @@ namespace WellInfoManagement
             MessageBox.Show(sqlCmd);
             queryForm.Show();
             DataSet set = new DataSet();
-            mainForm.sqlServer.Query(sqlCmd, ref set);
+            this.mainForm.sqlServer.Query(sqlCmd, ref set);
+            //((connectServer_Form)Parent).sqlServer.Query(sqlCmd, ref set);
             queryForm.queryResult_dgv.DataSource = set.Tables[0];
             set.Clear();
         }
@@ -162,7 +163,7 @@ namespace WellInfoManagement
 
         private string GenerateSqlSearchCommand()
         {
-            string tabelName = "";
+            string tabelName = "Well_Info";
             string sqlCmd = "select * from " + tabelName + " where ";
             for (int i = 0; i <= EffectiveLineCount; i++)
             {

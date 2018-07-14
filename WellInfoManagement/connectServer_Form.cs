@@ -29,6 +29,7 @@ namespace WellInfoManagement
                 if(queryForm == null)
                 {
                     queryForm = new Query_Form(this);
+                    //queryForm.Parent = this;
                     queryForm.ShowDialog(this);
                     Hide();                    
                 }
