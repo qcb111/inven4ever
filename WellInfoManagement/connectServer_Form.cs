@@ -20,6 +20,10 @@ namespace WellInfoManagement
         public connectServer_Form()
         {
             InitializeComponent();
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.MaximumSize = this.Size;
+            //this.ControlBox = false;
 
         }
 
@@ -61,6 +65,10 @@ namespace WellInfoManagement
             {
                 return true;
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e) {
+
         }
     }
 }
