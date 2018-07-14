@@ -82,7 +82,8 @@ namespace WellInfoManagement
             for (int i = 0; i < this.queryResult_dgv.Rows.Count; i++)
             {
                 int id;
-                if (int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out id))
+                if (queryResult_dgv.Rows[i].Cells[0].Value!=null && 
+                    int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out id))
                 {
                     mainForm.sqlServer.DeleteOne(id);
                 }
