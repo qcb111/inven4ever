@@ -72,7 +72,7 @@ namespace Sql {
         /// <param name="wellData"></param>
         /// <returns>rows affected</returns>
         public int DeleteOne(WellData wellData) {
-            strCmd = "delete from Well_Info where id = "
+            strCmd = "delete from " +  database + " where id = "
                 + wellData.Id;
             sqlCmd.CommandText = strCmd;
             return sqlCmd.ExecuteNonQuery();
@@ -80,7 +80,7 @@ namespace Sql {
 
         public int DeleteOne(int id)
         {
-            strCmd = "delete from Well_Info where id = "
+            strCmd = "delete from " + database +" where id = "
                 + id;
             sqlCmd.CommandText = strCmd;
             return sqlCmd.ExecuteNonQuery();
@@ -89,7 +89,7 @@ namespace Sql {
         public int DeleteSome(List<WellData> listWellData) {
             int rowsAffected = 0; ;
             foreach (WellData wd in listWellData) {
-                strCmd = "delete from Well_Info where id = " +
+                strCmd = "delete from " + database + " where id = " +
                     wd.Id.ToString();
                 sqlCmd.CommandText = strCmd;
                 rowsAffected = sqlCmd.ExecuteNonQuery();
@@ -98,7 +98,7 @@ namespace Sql {
         }
 
         public int Insert(WellData wellData) {
-            strCmd = "insert into Well_Info"
+            strCmd = "insert into " + database
               + " (wellName, xCoord, yCoord, wellType,"
               + " kellyBushing, totalDepth, recordDate)"
               + " values('"
@@ -123,7 +123,7 @@ namespace Sql {
 
         public int Update(WellData wellData, int id) {
 
-            string strCmd = "update Well_Info set "
+            string strCmd = "update " + database + " set "
                 + " WellName = '" + wellData.WellName.ToString() +"'"
                 + " ,xCoord = " + wellData.XCoord.ToString()
                 + " ,yCoord = " + wellData.YCoord.ToString()
