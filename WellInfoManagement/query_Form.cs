@@ -45,6 +45,14 @@ namespace WellInfoManagement
             searchItems_Form searchItemsForm = new searchItems_Form();
             searchItemsForm.ShowDialog(this);
         }
+
+        private void QueryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            searchItems_Form searchItemsForm = new searchItems_Form();
+            searchItemsForm.ShowDialog(this);
+        }
+
+
     }
 
 
