@@ -69,6 +69,7 @@ namespace Sql {
                 sqlCmd.Connection = con;
                 DataSet set = new DataSet();
                 TrySelect(ref set);
+                setTitleNames(ref set);
                 Console.WriteLine("open success");
             }catch(SqlException ex) {
                 Console.WriteLine("open error" + ex.ToString());
