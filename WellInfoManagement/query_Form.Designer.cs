@@ -56,9 +56,9 @@
             this.label1.Location = new System.Drawing.Point(199, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 33);
+            this.label1.Size = new System.Drawing.Size(207, 33);
             this.label1.TabIndex = 1;
-            this.label1.Text = "查询结果";
+            this.label1.Text = "Query Result";
             // 
             // menuStrip1
             // 
@@ -77,21 +77,21 @@
             // QueryToolStripMenuItem
             // 
             this.QueryToolStripMenuItem.Name = "QueryToolStripMenuItem";
-            this.QueryToolStripMenuItem.Size = new System.Drawing.Size(62, 29);
-            this.QueryToolStripMenuItem.Text = "查询";
+            this.QueryToolStripMenuItem.Size = new System.Drawing.Size(72, 29);
+            this.QueryToolStripMenuItem.Text = "Query";
             this.QueryToolStripMenuItem.Click += new System.EventHandler(this.QueryToolStripMenuItem_Click);
             // 
             // UpdateToolStripMenuItem
             // 
             this.UpdateToolStripMenuItem.Name = "UpdateToolStripMenuItem";
-            this.UpdateToolStripMenuItem.Size = new System.Drawing.Size(60, 29);
-            this.UpdateToolStripMenuItem.Text = "更新";
+            this.UpdateToolStripMenuItem.Size = new System.Drawing.Size(82, 29);
+            this.UpdateToolStripMenuItem.Text = "Update";
             // 
             // DeleteToolStripMenuItem
             // 
             this.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem";
-            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(61, 29);
-            this.DeleteToolStripMenuItem.Text = "删除";
+            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(74, 29);
+            this.DeleteToolStripMenuItem.Text = "Delete";
             // 
             // generateReportToolStripMenuItem
             // 

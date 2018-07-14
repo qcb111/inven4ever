@@ -14,10 +14,18 @@ namespace WellInfoManagement
 {
     public partial class searchItems_Form : Form
     {
+        connectServer_Form mainForm;
+        Query_Form queryForm;
+
         public searchItems_Form()
         {
             InitializeComponent();
             AddOneLine();
+        }
+        public searchItems_Form(connectServer_Form _mainForm, Query_Form _queryForm):this()
+        {
+            mainForm = _mainForm;
+            queryForm = _queryForm;
         }
 
         //2 group of + and - button;
@@ -143,9 +151,10 @@ namespace WellInfoManagement
         {
             string sqlCmd = GenerateSqlSearchCommand();
             MessageBox.Show(sqlCmd);
-            Query_Form queryForm = new Query_Form();
-            //new SqlServer().Query(sqlCmd, ref queryForm.queryResult);
-            //queryForm.queryResult_dgv.DataSource = queryForm.queryResult.Tables[0];
+            queryForm.Show();
+            mainForm.sqlServer.Query(sqlCmd, ref queryForm.queryResult);
+            queryForm.queryResult_dgv.DataSource = queryForm.queryResult.Tables[0];
+            queryForm.queryResult.Clear();
         }
 
 

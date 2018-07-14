@@ -14,11 +14,17 @@ namespace WellInfoManagement
 {
     public partial class Query_Form : Form
     {
-        public DataSet queryResult;
+        public DataSet queryResult = new DataSet();
+        connectServer_Form mainForm;
         public Query_Form()
         {
             InitializeComponent();
-     
+        }
+
+
+        public Query_Form(connectServer_Form _mainForm):this()
+        {
+            _mainForm = mainForm;
         }
 
         private void deleteResults_btn_Click(object sender, EventArgs e)
@@ -40,15 +46,9 @@ namespace WellInfoManagement
             // update?
         }
 
-        private void sendSearchRequest_btn_Click(object sender, EventArgs e)
-        {
-            searchItems_Form searchItemsForm = new searchItems_Form();
-            searchItemsForm.ShowDialog(this);
-        }
-
         private void QueryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            searchItems_Form searchItemsForm = new searchItems_Form();
+            searchItems_Form searchItemsForm = new searchItems_Form(mainForm,this);
             searchItemsForm.ShowDialog(this);
         }
 
