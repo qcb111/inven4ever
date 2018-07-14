@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sql;
+using System.Data.SqlClient;
 
 namespace WellInfoManagement
 {
@@ -60,7 +61,10 @@ namespace WellInfoManagement
                 ConnectionType.sqlServerAuthentication);
             if (sqlServer == null)
                 return false;
-            return true;
+            else
+            {
+                return true;
+            }
         }
 
         private void label2_Click(object sender, EventArgs e) {

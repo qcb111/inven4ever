@@ -41,12 +41,9 @@
             // 
             // queryResult_dgv
             // 
-            this.queryResult_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.queryResult_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.queryResult_dgv.Location = new System.Drawing.Point(28, 80);
-            this.queryResult_dgv.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.queryResult_dgv.Margin = new System.Windows.Forms.Padding(4);
             this.queryResult_dgv.Name = "queryResult_dgv";
             this.queryResult_dgv.RowTemplate.Height = 23;
             this.queryResult_dgv.Size = new System.Drawing.Size(500, 323);
@@ -54,13 +51,12 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("SimSun", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(199, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(180, 27);
+            this.label1.Size = new System.Drawing.Size(207, 33);
             this.label1.TabIndex = 1;
             this.label1.Text = "Query Result";
             // 
@@ -104,7 +100,7 @@
             this.generateReportToolStripMenuItem.Name = "generateReportToolStripMenuItem";
             this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(147, 29);
             this.generateReportToolStripMenuItem.Text = "GenerateReport";
-            //this.generateReportToolStripMenuItem.Click += new System.EventHandler(this.generateReportToolStripMenuItem_Click);
+            this.generateReportToolStripMenuItem.Click += new System.EventHandler(this.generateReportToolStripMenuItem_Click);
             // 
             // Query_Form
             // 
@@ -115,10 +111,9 @@
             this.Controls.Add(this.queryResult_dgv);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Query_Form";
             this.Text = "Well Info Management System";
-            //this.Load += new System.EventHandler(this.Query_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.queryResult_dgv)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
