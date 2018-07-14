@@ -180,7 +180,7 @@ namespace WellInfoManagement
 
         private string GenerateSqlSearchCommand()
         {
-            string tabelName = "Well_Info2";
+            string tabelName = "Well_Info";
             string sqlCmd = "select * from " + tabelName + " where ";
             for (int i = 0; i <= EffectiveLineCount; i++)
             {
