@@ -25,6 +25,8 @@ namespace WellInfoManagement
         public Query_Form(connectServer_Form _mainForm):this()
         {
             mainForm = _mainForm;
+            WellData data = new WellData("n-1", 123, 456, "abc", 123, 456);
+            mainForm.sqlServer.Insert(data);
         }
 
         private void deleteResults_btn_Click(object sender, EventArgs e)
@@ -64,22 +66,15 @@ namespace WellInfoManagement
                     double.Parse(queryResult_dgv.Rows[i].Cells[5].Value.ToString()),
                     double.Parse(queryResult_dgv.Rows[i].Cells[6].Value.ToString())
                     );
-                mainForm.sqlServer.Update(wellData);
+                mainForm.sqlServer.Update(wellData, int.Parse(queryResult_dgv.Rows[i].Cells[0].Value.ToString()));
             }
         }
 
         private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < this.queryResult_dgv.Rows.Count; i++)
-            {
-                mainForm.sqlServer.DeleteOne(new WellData(
-                    queryResult_dgv.Rows[i].Cells[1].Value.ToString(),
-                    double.Parse(queryResult_dgv.Rows[i].Cells[2].Value.ToString()),
-                    double.Parse(queryResult_dgv.Rows[i].Cells[3].Value.ToString()),
-                    queryResult_dgv.Rows[i].Cells[4].Value.ToString(),
-                    double.Parse(queryResult_dgv.Rows[i].Cells[5].Value.ToString()),
-                    double.Parse(queryResult_dgv.Rows[i].Cells[6].Value.ToString())
-                    ));
+            {                
+                mainForm.sqlServer.DeleteOne(int.Parse(this.queryResult_dgv.Rows[i].Cells[0].Value.ToString()));
             }
         }
 
