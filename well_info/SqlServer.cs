@@ -72,7 +72,7 @@ namespace Sql {
         /// <param name="wellData"></param>
         /// <returns>rows affected</returns>
         public int DeleteOne(WellData wellData) {
-            strCmd = "delete from wellInfo where id = "
+            strCmd = "delete from Well_Info2 where id = "
                 + wellData.Id;
             sqlCmd.CommandText = strCmd;
             return sqlCmd.ExecuteNonQuery();
@@ -80,7 +80,7 @@ namespace Sql {
 
         public int DeleteOne(int id)
         {
-            strCmd = "delete from wellInfo where id = "
+            strCmd = "delete from Well_Info2 where id = "
                 + id;
             sqlCmd.CommandText = strCmd;
             return sqlCmd.ExecuteNonQuery();
@@ -89,7 +89,7 @@ namespace Sql {
         public int DeleteSome(List<WellData> listWellData) {
             int rowsAffected = 0; ;
             foreach (WellData wd in listWellData) {
-                strCmd = "delete from wellInfo where id = " +
+                strCmd = "delete from Well_Info2 where id = " +
                     wd.Id.ToString();
                 sqlCmd.CommandText = strCmd;
                 rowsAffected = sqlCmd.ExecuteNonQuery();
@@ -98,7 +98,7 @@ namespace Sql {
         }
 
         public int Insert(WellData wellData) {
-            strCmd = "insert into wellInfo"
+            strCmd = "insert into Well_Info2"
               + " (wellName, xCoord, yCoord, wellType,"
               + " kellyBushing, totalDepth, recordDate)"
               + " values('"
@@ -121,16 +121,16 @@ namespace Sql {
             return dataAdaptor.Fill(set);
         }
 
-        public int Update(WellData wellData) {
+        public int Update(WellData wellData, int id) {
 
-            string strCmd = "update Well_Info set "
+            string strCmd = "update Well_Info2 set "
                 + " WellName = '" + wellData.WellName.ToString() +"'"
                 + " ,xCoord = " + wellData.XCoord.ToString()
                 + " ,yCoord = " + wellData.YCoord.ToString()
                 + " ,wellType = '" + wellData.WellType.ToString() + "'"
                 + " ,KellyBushing = " + wellData.KellyBushing.ToString()
                 + " ,totalDepth = " + wellData.TotalDepth.ToString()
-                + " where id=" + wellData.Id.ToString();
+                + " where id=" + id.ToString();
 
             sqlCmd.CommandText = strCmd;
             return sqlCmd.ExecuteNonQuery();
