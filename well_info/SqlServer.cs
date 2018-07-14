@@ -45,11 +45,12 @@ namespace Sql {
 
         public SqlServer(string server_p,
             string user_p, string passwd_p,
-            string dataBase_p, ConnectionType conType) {
+            string dataBase_p, string tableName, ConnectionType conType) {
             server = server_p;
             user = user_p;
             password = passwd_p;
             database = dataBase_p;
+            this.tableName = tableName;
 
             if (conType == ConnectionType.sqlServerAuthentication)
                 constructSource_sql_auth();
@@ -78,7 +79,7 @@ namespace Sql {
         /// <param name="wellData"></param>
         /// <returns>rows affected</returns>
         public int DeleteOne(WellData wellData) {
-            strCmd = "delete from " +  database + " where id = "
+            strCmd = "delete from " +  tableName + " where id = "
                 + wellData.Id;
             sqlCmd.CommandText = strCmd;
             return sqlCmd.ExecuteNonQuery();
@@ -86,7 +87,7 @@ namespace Sql {
 
         public int DeleteOne(int id)
         {
-            strCmd = "delete from " + database +" where id = "
+            strCmd = "delete from " + tableName +" where id = "
                 + id;
             sqlCmd.CommandText = strCmd;
             return sqlCmd.ExecuteNonQuery();
@@ -95,7 +96,7 @@ namespace Sql {
         public int DeleteSome(List<WellData> listWellData) {
             int rowsAffected = 0; ;
             foreach (WellData wd in listWellData) {
-                strCmd = "delete from " + database + " where id = " +
+                strCmd = "delete from " + tableName + " where id = " +
                     wd.Id.ToString();
                 sqlCmd.CommandText = strCmd;
                 rowsAffected = sqlCmd.ExecuteNonQuery();
@@ -104,7 +105,7 @@ namespace Sql {
         }
 
         public int Insert(WellData wellData) {
-            strCmd = "insert into " + database
+            strCmd = "insert into " + tableName
               + " (wellName, xCoord, yCoord, wellType,"
               + " kellyBushing, totalDepth, recordDate)"
               + " values('"
@@ -129,7 +130,7 @@ namespace Sql {
 
         public int Update(WellData wellData, int id) {
 
-            string strCmd = "update " + database + " set "
+            string strCmd = "update " + tableName + " set "
                 + " WellName = '" + wellData.WellName.ToString() +"'"
                 + " ,xCoord = " + wellData.XCoord.ToString()
                 + " ,yCoord = " + wellData.YCoord.ToString()
