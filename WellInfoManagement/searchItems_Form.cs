@@ -183,8 +183,7 @@ namespace WellInfoManagement
 
         private string GenerateSqlSearchCommand()
         {
-            string tabelName = "Well_Info";
-            string sqlCmd = "select * from " + tabelName + " where ";
+            string sqlCmd = "select * from " + mainForm.sqlServer.TableName + " where ";
             for (int i = 0; i <= EffectiveLineCount; i++)
             {
                 if(i>0)

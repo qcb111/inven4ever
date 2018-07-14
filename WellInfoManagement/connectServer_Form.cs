@@ -58,6 +58,7 @@ namespace WellInfoManagement
                 this.user_tb.Text, 
                 this.password_tb.Text, 
                 this.databaseName_tb.Text,
+                this.tableName_tb.Text,
                 ConnectionType.sqlServerAuthentication);
             if (sqlServer == null)
                 return false;
@@ -67,8 +68,5 @@ namespace WellInfoManagement
             }
         }
 
-        private void label2_Click(object sender, EventArgs e) {
-
-        }
     }
 }

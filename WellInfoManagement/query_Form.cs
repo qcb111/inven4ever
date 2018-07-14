@@ -22,7 +22,7 @@ namespace WellInfoManagement
         }
 
 
-        public Query_Form(connectServer_Form _mainForm):this()
+        public Query_Form(connectServer_Form _mainForm) : this()
         {
             mainForm = _mainForm;
             WellData data = new WellData("n-1", 123, 456, "abc", 123, 456);
@@ -42,7 +42,7 @@ namespace WellInfoManagement
 
         private void QueryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            searchItems_Form searchItemsForm = new searchItems_Form(mainForm,this);
+            searchItems_Form searchItemsForm = new searchItems_Form(mainForm, this);
             searchItemsForm.ShowDialog(this);
         }
 
@@ -50,22 +50,29 @@ namespace WellInfoManagement
         {
             for (int i = 0; i < this.queryResult_dgv.Rows.Count; i++)
             {
-                WellData wellData = new WellData(
-                        queryResult_dgv.Rows[i].Cells[1].Value.ToString(),
-                        double.Parse(queryResult_dgv.Rows[i].Cells[2].Value.ToString()),
-                        double.Parse(queryResult_dgv.Rows[i].Cells[3].Value.ToString()),
-                        queryResult_dgv.Rows[i].Cells[4].Value.ToString(),
-                        double.Parse(queryResult_dgv.Rows[i].Cells[5].Value.ToString()),
-                        double.Parse(queryResult_dgv.Rows[i].Cells[6].Value.ToString())
-                        );
-                int id;
-                if (int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out id))
+                try
                 {
-                    mainForm.sqlServer.Update(wellData, id);
+                    WellData wellData = new WellData(
+                          queryResult_dgv.Rows[i].Cells[1].Value.ToString(),
+                          double.Parse(queryResult_dgv.Rows[i].Cells[2].Value.ToString()),
+                          double.Parse(queryResult_dgv.Rows[i].Cells[3].Value.ToString()),
+                          queryResult_dgv.Rows[i].Cells[4].Value.ToString(),
+                          double.Parse(queryResult_dgv.Rows[i].Cells[5].Value.ToString()),
+                          double.Parse(queryResult_dgv.Rows[i].Cells[6].Value.ToString())
+                          );
+                    int id;
+                    if (int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out id))
+                    {
+                        mainForm.sqlServer.Update(wellData, id);
+                    }
+                    else if (queryResult_dgv.Rows[i].Cells[0].Value.ToString() == "")
+                    {
+                        mainForm.sqlServer.Insert(wellData);
+                    }
                 }
-                else if(queryResult_dgv.Rows[i].Cells[0].Value.ToString() == "")
+                catch(Exception)
                 {
-                    mainForm.sqlServer.Insert(wellData);
+                    MessageBox.Show("Invalid Input Data Existed.");
                 }
             }
         }
@@ -75,7 +82,7 @@ namespace WellInfoManagement
             for (int i = 0; i < this.queryResult_dgv.Rows.Count; i++)
             {
                 int id;
-                if(int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out id))
+                if (int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out id))
                 {
                     mainForm.sqlServer.DeleteOne(id);
                 }
