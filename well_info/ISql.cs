@@ -13,4 +13,6 @@ namespace Sql {
         int Query(string sqlcmd, ref DataSet set);
         int Update(string sqlcmd, WellData wellData);
     }
+
+
 }
