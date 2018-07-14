@@ -40,14 +40,6 @@ namespace WellInfoManagement
         }
 
 
-        private void updateModifiedData_btn_Click(object sender, EventArgs e)
-        {
-            DataTable table = this.queryResult_dgv.DataSource as DataTable;
-            DataSet set = new DataSet();
-            set.Tables.Add(table);
-            // update?
-        }
-
         private void QueryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             searchItems_Form searchItemsForm = new searchItems_Form(mainForm,this);
@@ -58,9 +50,7 @@ namespace WellInfoManagement
         {
             for (int i = 0; i < this.queryResult_dgv.Rows.Count; i++)
             {
-                if (int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out int id))
-                {
-                    WellData wellData = new WellData(
+                WellData wellData = new WellData(
                         queryResult_dgv.Rows[i].Cells[1].Value.ToString(),
                         double.Parse(queryResult_dgv.Rows[i].Cells[2].Value.ToString()),
                         double.Parse(queryResult_dgv.Rows[i].Cells[3].Value.ToString()),
@@ -68,7 +58,14 @@ namespace WellInfoManagement
                         double.Parse(queryResult_dgv.Rows[i].Cells[5].Value.ToString()),
                         double.Parse(queryResult_dgv.Rows[i].Cells[6].Value.ToString())
                         );
+                int id;
+                if (int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out id))
+                {
                     mainForm.sqlServer.Update(wellData, id);
+                }
+                else if(queryResult_dgv.Rows[i].Cells[0].Value == null)
+                {
+                    mainForm.sqlServer.Insert(wellData);
                 }
             }
         }
@@ -76,14 +73,18 @@ namespace WellInfoManagement
         private void DeleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < this.queryResult_dgv.Rows.Count; i++)
-            {                
-                mainForm.sqlServer.DeleteOne(int.Parse(this.queryResult_dgv.Rows[i].Cells[0].Value.ToString()));
+            {
+                int id;
+                if(int.TryParse(queryResult_dgv.Rows[i].Cells[0].Value.ToString(), out id))
+                {
+                    mainForm.sqlServer.DeleteOne(id);
+                }
             }
         }
 
         private void generateReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // System.Windows.Forms.DataGridView dgv_Info = new System.Windows.Forms.DataGridView();
+            // System.Windows.Forms.DataGridView dgv_Info = new System.Windows.Forms.DataGridView();
             //if (dgv_Info.Rows.Count == 0)//判断是否有数据
             //    return;//返回
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();//实例化Excel对象
@@ -110,6 +111,8 @@ namespace WellInfoManagement
                 }
             }
         }
+
+
     }
 
 

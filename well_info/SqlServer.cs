@@ -25,6 +25,12 @@ namespace Sql {
         private static string database;
         private static string source;
 
+        private string[] titleNames;
+        private string tableName;
+
+        public string[] TitleNames { get => titleNames; set => titleNames = value; }
+        public string TableName { get => tableName; set => tableName = value; }
+
         private static void constructSource_sql_auth() {
             source = "server=" + server
                 + ";database=" + database
