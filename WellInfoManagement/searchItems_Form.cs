@@ -151,6 +151,9 @@ namespace WellInfoManagement
 
         private void AddComboboxItemsTableItems(int i, int j)
         {
+            comboBoxesInLines[i, j].Items.Add("id");
+            comboBoxesInLines[i, j].Items.Add("wellName");
+            comboBoxesInLines[i, j].Items.Add("wellType");
             //add items of the tabel in database
         }
 
