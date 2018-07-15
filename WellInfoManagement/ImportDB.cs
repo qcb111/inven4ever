@@ -28,26 +28,7 @@ namespace WellInfoManagement
             //ReadExcel("C:\\Users\\zlvin\\Desktop\\well.xlsx");
         }
 
-        public void ImportExcel(string filePath)
-        {
-            if (filePath != "")
-            {
-                if (filePath.Contains("xls"))//判断文件是否存在
-                {
-                    ReadExcel(filePath);
-                }
-                else
-                {
-                    Console.WriteLine("请检查您选择的文件是否为Excel文件！谢谢！");
-                }
-            }
-            else
-            {
-                Console.WriteLine("请先选择导入文件后，再执行导入！谢谢！");
-            }
-        }
-
-        private void ReadExcel(string filePath)
+        public bool ReadExcel(string filePath)
         {
             strConn = "Provider=Microsoft.Ace.OleDb.12.0;" + "Data Source=" + filePath + ";" + "Extended Properties=Excel 12.0";
             oleCon = new OleDbConnection(strConn);
@@ -71,7 +52,7 @@ namespace WellInfoManagement
                 tKellyBushing = Convert.ToDouble(ds.Tables["[Sheet1$]"].Rows[i]["kellyBushing"].ToString().Trim());
                 tTotalDepth = Convert.ToDouble(ds.Tables["[Sheet1$]"].Rows[i]["totalDepth"].ToString().Trim());
 
-                excelsql = "insert into tb_wellinfo1(wellName, xCoord, yCoord, wellType, kellyBushing, totalDepth) values ('" + tWellName + "','" + tXCoord + "','" + tYCoord + "','" + tWellType + "','" + tKellyBushing + "','" + tTotalDepth + "')";
+                excelsql = "insert into Well_Info(wellName, xCoord, yCoord, wellType, kellyBushing, totalDepth) values ('" + tWellName + "','" + tXCoord + "','" + tYCoord + "','" + tWellType + "','" + tKellyBushing + "','" + tTotalDepth + "')";
 
                 try
                 {
@@ -80,24 +61,17 @@ namespace WellInfoManagement
                 }
                 catch (Exception ex)
                 {
-                    //Console.WriteLine(ex.ToString());
-                    Console.WriteLine("数据导入失败！数据异常！");
-                    Console.WriteLine(tWellName);
-                    Console.WriteLine(tWellType);
-                    Console.WriteLine(tXCoord);
-                    Console.WriteLine(tYCoord);
-                    Console.WriteLine(tKellyBushing);
-                    Console.WriteLine(tTotalDepth);
+                    return false;
                 }
                 finally
                 {
                     ;
                 }
             }
-            Console.WriteLine("数据导入成功!");
             //sqlCommand = null;
             sqlConnection.Close();
             //sqlConnection = null;
+            return true;
         }
     }
 }

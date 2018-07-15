@@ -31,6 +31,7 @@
             this.queryResult_dgv = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.importToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.QueryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,11 +50,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.queryResult_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.queryResult_dgv.Location = new System.Drawing.Point(19, 48);
-            this.queryResult_dgv.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.queryResult_dgv.Location = new System.Drawing.Point(28, 72);
+            this.queryResult_dgv.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.queryResult_dgv.Name = "queryResult_dgv";
             this.queryResult_dgv.RowTemplate.Height = 23;
-            this.queryResult_dgv.Size = new System.Drawing.Size(460, 186);
+            this.queryResult_dgv.Size = new System.Drawing.Size(1079, 359);
             this.queryResult_dgv.TabIndex = 0;
             // 
             // label1
@@ -62,98 +63,111 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(108, 25);
+            this.label1.Location = new System.Drawing.Point(442, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 21);
+            this.label1.Size = new System.Drawing.Size(207, 33);
             this.label1.TabIndex = 1;
             this.label1.Text = "Query Result";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.importToolStripMenuItem,
             this.QueryToolStripMenuItem,
             this.UpdateToolStripMenuItem,
             this.DeleteToolStripMenuItem,
             this.generateReportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(497, 25);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
+            this.menuStrip1.Size = new System.Drawing.Size(1135, 34);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // importToolStripMenuItem
+            // 
+            this.importToolStripMenuItem.Name = "importToolStripMenuItem";
+            this.importToolStripMenuItem.Size = new System.Drawing.Size(81, 28);
+            this.importToolStripMenuItem.Text = "Import";
+            this.importToolStripMenuItem.Click += new System.EventHandler(this.importToolStripMenuItem_Click);
             // 
             // QueryToolStripMenuItem
             // 
             this.QueryToolStripMenuItem.Name = "QueryToolStripMenuItem";
-            this.QueryToolStripMenuItem.Size = new System.Drawing.Size(55, 21);
+            this.QueryToolStripMenuItem.Size = new System.Drawing.Size(75, 28);
             this.QueryToolStripMenuItem.Text = "Query";
             this.QueryToolStripMenuItem.Click += new System.EventHandler(this.QueryToolStripMenuItem_Click);
             // 
             // UpdateToolStripMenuItem
             // 
             this.UpdateToolStripMenuItem.Name = "UpdateToolStripMenuItem";
-            this.UpdateToolStripMenuItem.Size = new System.Drawing.Size(63, 21);
+            this.UpdateToolStripMenuItem.Size = new System.Drawing.Size(86, 28);
             this.UpdateToolStripMenuItem.Text = "Update";
             this.UpdateToolStripMenuItem.Click += new System.EventHandler(this.UpdateToolStripMenuItem_Click);
             // 
             // DeleteToolStripMenuItem
             // 
             this.DeleteToolStripMenuItem.Name = "DeleteToolStripMenuItem";
-            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(57, 21);
+            this.DeleteToolStripMenuItem.Size = new System.Drawing.Size(78, 28);
             this.DeleteToolStripMenuItem.Text = "Delete";
             this.DeleteToolStripMenuItem.Click += new System.EventHandler(this.DeleteToolStripMenuItem_Click);
             // 
             // generateReportToolStripMenuItem
             // 
             this.generateReportToolStripMenuItem.Name = "generateReportToolStripMenuItem";
-            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(113, 21);
+            this.generateReportToolStripMenuItem.Size = new System.Drawing.Size(159, 28);
             this.generateReportToolStripMenuItem.Text = "GenerateReport";
             this.generateReportToolStripMenuItem.Click += new System.EventHandler(this.generateReportToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.LastCommand_toolStripStatusLabel,
             this.NumberOfLinesAffected_toolStripStatusLabel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 240);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 444);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(497, 22);
+            this.statusStrip1.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
+            this.statusStrip1.Size = new System.Drawing.Size(1135, 29);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // LastCommand_toolStripStatusLabel
             // 
-            this.LastCommand_toolStripStatusLabel.AutoSize = false;
             this.LastCommand_toolStripStatusLabel.Name = "LastCommand_toolStripStatusLabel";
-            this.LastCommand_toolStripStatusLabel.Size = new System.Drawing.Size(210, 17);
+            this.LastCommand_toolStripStatusLabel.Size = new System.Drawing.Size(189, 24);
             this.LastCommand_toolStripStatusLabel.Text = "Last Executed Query:";
             this.LastCommand_toolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // NumberOfLinesAffected_toolStripStatusLabel
             // 
+            this.NumberOfLinesAffected_toolStripStatusLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.NumberOfLinesAffected_toolStripStatusLabel.AutoSize = false;
             this.NumberOfLinesAffected_toolStripStatusLabel.Name = "NumberOfLinesAffected_toolStripStatusLabel";
-            this.NumberOfLinesAffected_toolStripStatusLabel.Size = new System.Drawing.Size(150, 17);
+            this.NumberOfLinesAffected_toolStripStatusLabel.Size = new System.Drawing.Size(150, 24);
             this.NumberOfLinesAffected_toolStripStatusLabel.Text = "Lines Affected";
             this.NumberOfLinesAffected_toolStripStatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.NumberOfLinesAffected_toolStripStatusLabel.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.NumberOfLinesAffected_toolStripStatusLabel.Click += new System.EventHandler(this.NumberOfLinesAffected_toolStripStatusLabel_Click);
             // 
             // Query_Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 262);
+            this.ClientSize = new System.Drawing.Size(1135, 473);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.queryResult_dgv);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.Name = "Query_Form";
             this.Text = "Well Info Management System";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Query_Form_FormClosed);
+            this.Load += new System.EventHandler(this.Query_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.queryResult_dgv)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -176,6 +190,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         public System.Windows.Forms.ToolStripStatusLabel LastCommand_toolStripStatusLabel;
         public System.Windows.Forms.ToolStripStatusLabel NumberOfLinesAffected_toolStripStatusLabel;
+        private System.Windows.Forms.ToolStripMenuItem importToolStripMenuItem;
     }
 }
 

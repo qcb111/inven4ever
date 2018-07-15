@@ -127,6 +127,28 @@ namespace WellInfoManagement
             //mainForm.Close();
             Environment.Exit(0);
         }
+
+
+        private void importToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Import_Form importForm = new Import_Form();
+            importForm.ShowDialog();
+        }
+
+        private void Query_Form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumberOfLinesAffected_toolStripStatusLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

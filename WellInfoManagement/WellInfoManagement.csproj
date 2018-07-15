@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImportDB.cs" />
+    <Compile Include="Import_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Import_Form.Designer.cs">
+      <DependentUpon>Import_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="searchItems_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Import_Form.resx">
+      <DependentUpon>Import_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="query_Form.resx">
       <DependentUpon>query_Form.cs</DependentUpon>
     </EmbeddedResource>
